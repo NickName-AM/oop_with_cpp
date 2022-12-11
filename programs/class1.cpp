@@ -1,44 +1,47 @@
 #include <iostream>
+
 using namespace std;
 
-class box
+class Box
 {
+
+	double l;
+	double b;
+	double h;
 public:
-	double length;
-	double breadth;
-	double height;
-	double getArea()
+	void setDimensions(double le, double br, double he){
+		l = le;
+		b = br;
+		h = he;
+	}
+	
+	void showDimensions()
 	{
-		return (2*(length*breadth+breadth*height+length*height));
+		cout << l << " x " << b << " x " << h << endl;
+	}
+	
+	double area()
+	{
+		return 2 * ( l * b + b * h + l * h );
 	}
 
-	double getVolume()
+	double volume()
 	{
-		return (length*breadth*height);
+		return l * b * h;
 	}
 
-	void displayDim()
-	{
-		cout << length << "*" << breadth << "*" << height << endl;
-	}
 };
 
 
 int main()
 {
-	box obj;
-	cout << "Enter the length of the box: " ;
-	cin >> obj.length;
-	cout << "Enter the breadth of the box: " ;
-	cin >> obj.breadth;
-	cout << "Enter the height of the box: " ;
-	cin >> obj.height;
+	Box myBox;
+	
+	myBox.setDimensions(1,2,3);
+	myBox.showDimensions();
 
-	cout << "Dimensions:";
-	obj.displayDim();
-
-	cout << "\nArea: " << obj.getArea() << endl;
-	cout << "Volume: " << obj.getVolume() << endl;
+	cout << "\nArea: " << myBox.area() << endl;
+	cout << "Volume: " << myBox.volume() << endl;
 
 	return 0;
 }

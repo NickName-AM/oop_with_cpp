@@ -7,7 +7,7 @@ namespace test {
     int cout = 1;
 }
 
-using namespace test;
+
 int main () {
     std::cout << test::cout << std::endl;
 
