@@ -169,3 +169,33 @@
 
 ## Pass-By-Reference
     - Passing address as an argument to a function
+
+## Class
+    - Blueprint of an object
+
+## Object
+    - An instance of a class
+
+## Method
+    - A function inside a class
+    - Can only be accessed by an object of that class
+
+## Constructor
+    - special member function
+    - do not have return type
+    - same name as the class name
+    - gets called automatically when an object is created
+    - Used to initialize the object
+    Ex:
+    class Student{
+        public:
+        Student(){         // A Default Constructor
+            ...
+        }
+    }
+
+    - Types:
+        > Default 
+        > Parametrized
+     
+    
