@@ -181,8 +181,8 @@
     - Can only be accessed by an object of that class
 
 ## Constructor
-    - special member function
-    - do not have return type
+    - special function
+    - does not have return type
     - same name as the class name
     - gets called automatically when an object is created
     - Used to initialize the object
@@ -197,5 +197,33 @@
     - Types:
         > Default 
         > Parametrized
-     
-    
+        > Copy
+
+## Default Constructor
+    - Ex:
+    class Xyz{
+    public:
+        Xyz(){
+            ...
+        }
+    }
+
+## Parametrized Costructor
+    - Ex:
+    class Xyz{
+    public:
+        Xyz(int a, string b){
+            ...
+        }
+    }
+
+## Copy Constructor
+    - used to create clone of an object
+    Ex: 
+    class Xyz{
+    public:
+        Xyz(const Xyz &myObject){
+            ...
+        }
+    }
+

@@ -19,6 +19,7 @@ class Student{
     string name;
     int age;
     double marks;
+    double fullMarks = 500;
 
 public:
     Student(string n, int a, double m){
@@ -46,12 +47,12 @@ double Student::getMarks(){
 }
 
 double Student::calculatePercentage(){
-    return (marks / 500) * 100;
+    return (marks / fullMarks) * 100;
 }
 
 
 int main(){
-    Student stdnt("Mario", 20, 235);
+    Student stdnt("Mario", 20, 234);
     cout << stdnt.getName() << endl;
     cout << stdnt.getAge() << endl;
     cout << stdnt.getMarks() << endl;
