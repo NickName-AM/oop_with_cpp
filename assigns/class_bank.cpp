@@ -28,7 +28,6 @@ Bank::Bank(string name, double initialAmt){
         balanceAmount = initialAmt;
     }else{
         cout << "[-] Error while creating the object." << endl;
-        exit(-1);
     }
 }
 
@@ -38,7 +37,7 @@ void Bank::displayInfo(){
 }
 
 void Bank::withdraw(double amt){
-    if (balanceAmount > amt){
+    if ((balanceAmount >= amt) && (amt > 0)){
         balanceAmount -= amt;
         cout << "[+] " << amt << " retrieved." << endl;    
     }else{
@@ -57,9 +56,19 @@ void Bank::deposit(double amt){
     cout << "Remaining Balance: " << balanceAmount << endl; 
 }
 
+void options(){
+    cout << "1 info" << endl;
+    cout << "2 withdraw" << endl;
+    cout << "3 deposit" << endl;
+    cout << "4 help" << endl;
+    cout << "q quit" << endl;
+}
+
 int main(){
     Bank myMan("Mario", 12345);
     myMan.displayInfo();
     myMan.withdraw(100);
     myMan.deposit(100);
+
+
 }
