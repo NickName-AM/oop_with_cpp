@@ -7,6 +7,7 @@ class - Bank
 + withdraw(double)  void
 + deposit           void
 */
+
 #include<iostream>
 
 using namespace std;
@@ -58,17 +59,43 @@ void Bank::deposit(double amt){
 
 void options(){
     cout << "1 info" << endl;
-    cout << "2 withdraw" << endl;
-    cout << "3 deposit" << endl;
-    cout << "4 help" << endl;
-    cout << "q quit" << endl;
+    cout << "2 deposit" << endl;
+    cout << "3 withdraw" << endl;
+    cout << "0 exit" << endl;
 }
 
 int main(){
     Bank myMan("Mario", 12345);
-    myMan.displayInfo();
-    myMan.withdraw(100);
-    myMan.deposit(100);
+    
+    int opt;
+    double amt;
+    options();
+    while(true){
+        cout << "Options >> ";
+        cin >> opt;
+        switch(opt) {
+            case 1:
+                myMan.displayInfo();
+                break;
+            case 2:
+                cout << "Deposit Amount >> ";
+                cin >> amt;
+                myMan.deposit(amt);
+                break;
+            case 3:
+                cout << "Withdraw Amount >> ";
+                cin >> amt;
+                myMan.withdraw(amt);
+                break;
+            case 0:
+                cout << "Exiting" << endl;
+                exit(0);
+            default:
+                options();
+        }
+        amt = 0;
+        cout << endl;
+    }
 
-
+    return 0;
 }
