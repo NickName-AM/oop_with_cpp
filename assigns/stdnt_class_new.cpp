@@ -68,7 +68,7 @@ void Student::displayInfo(){
 
 void Student::displayPercentage(){
     double percent = totalMarks() / 5;
-    cout << "Percentage: " << percent << endl;
+    cout << "Percentage: " << percent << "%" << endl;
 }
 
 Student Student::compareMarks(Student s1, Student s2){
