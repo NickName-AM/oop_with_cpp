@@ -19,7 +19,7 @@ int main()
 
     setlevel() = 2;
 
-    cout << "After again:\n" << level << endl;
+    cout << "After again\]:\n" << level << endl;
 
     return 0;
 }
