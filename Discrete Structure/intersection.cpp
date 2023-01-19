@@ -9,7 +9,7 @@ int main(){
     cout << "No. of elements in set B: ";
     cin >> setb_length;
 
-    int seta[seta_length], temp[setb_length], setb[setb_length];
+    int seta[seta_length], setb[setb_length];
     
     int i,j,c,c1=0;
 
@@ -21,38 +21,25 @@ int main(){
     // Temporary set elements (For checking duplicates against set A)
     cout << "Set B" << endl;
     for(i=0; i<setb_length; ++i){
-        cin >> temp[i];
+        cin >> setb[i];
     }
 
-    // Remove Duplicates and append to setb
-    for(i=0; i<setb_length; ++i){
-        c = 0;
-        for(j=0; j<seta_length; ++j){
-            if(temp[i] == seta[j]){
-                c+=1;
+    int setc[seta_length];
+    for(i=0; i<seta_length; ++i){
+        for(j=0; j<setb_length; ++j){
+            if(seta[i] == setb[j]){
+                setc[c1] = seta[i];
+                c1++;
             }
         }
-        if(c == 0){
-            setb[c1] = temp[i];
-            c1++;
-        }
     }
 
-    // Union set
-    int setc[seta_length + c1];
-    for(i=0; i<seta_length; ++i){
-        setc[i] = seta[i];
-        setc[i+seta_length] = setb[i];
-    }
 
-    // Result
-    cout << "Union: ";
-    for(i=0; i<seta_length + c1; ++i){
+    cout << endl << "Intersection: " << endl;
+    for(i=0; i<c1; ++i){
         cout << setc[i] << " ";
     }
     cout << endl;
 
-
     return 0;
-
 }
