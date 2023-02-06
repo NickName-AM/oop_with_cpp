@@ -21,7 +21,7 @@ class Student: public Person{
     public:
     Student(string n, int a, int m[]): Person(n, a){ 
         for(int i = 0; i < 5; ++i) 
-            marks[i] = m[i]; 
+            this->marks[i] = m[i]; 
     }
 
     void display(){
@@ -35,7 +35,7 @@ class Student: public Person{
     void calculate_percentage(){
         int s = 0;
         for(int i = 0; i<5; ++i)
-            s+=marks[i];
+            s+=this->marks[i];
         cout << "Percentage: " << s / 5 << "%" << endl;
     }
 };
