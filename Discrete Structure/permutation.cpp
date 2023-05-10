@@ -19,8 +19,6 @@ int main(){
     cin >> r;
 
     p = fact(n) / fact(n-r);
-
     cout << n << "P" << r << " = " << p << endl;
-
     return 0;
 }
